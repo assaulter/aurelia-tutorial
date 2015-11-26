@@ -17,9 +17,16 @@ export class Users{
     this.http = http;
   }
 
+  /* canActivate, activate, canDeactivate, deactivateのライフサイクルメソッドがあるので、それにフックする
+   * ちなpromiseを投げれば完了まで待つっぽい。
+   */
   activate(){
     return this.http.fetch('users')
       .then(response => response.json())
       .then(users => this.users = users);
+  }
+
+  canDeactivate() {
+    return confirm('Are you sure you want to leave?');
   }
 }
