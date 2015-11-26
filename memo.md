@@ -3,6 +3,8 @@
 ## 参考
 [get-started.md](https://github.com/aurelia/documentation/blob/master/English/get-started.md)
 
+[ガチっぽいドキュメント](https://github.com/aurelia/documentation/blob/master/English/docs.md)
+
 ## 環境
 mdどおりに作成。
 
