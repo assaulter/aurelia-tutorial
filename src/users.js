@@ -19,7 +19,12 @@ export class Users{
 
   /* canActivate, activate, canDeactivate, deactivateのライフサイクルメソッドがあるので、それにフックする
    * ちなpromiseを投げれば完了まで待つっぽい。
+   * この順番で呼ばれる
    */
+  canActivate() {
+    return confirm('can Activate?');
+  }
+
   activate(){
     return this.http.fetch('users')
       .then(response => response.json())
@@ -28,5 +33,9 @@ export class Users{
 
   canDeactivate() {
     return confirm('Are you sure you want to leave?');
+  }
+
+  deactivate() {
+    return confirm('deactivate');
   }
 }
